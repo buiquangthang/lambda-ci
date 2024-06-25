@@ -4,9 +4,7 @@ frameworkVersion: ">=1.1.0 <=2.50.0"
 
 provider:
   name: aws
-  runtime: python3.8
-  environment:
-    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  runtime: python3.11
   iamRoleStatements:
     - Effect: Allow
       Action:
