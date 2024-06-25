@@ -1,4 +1,4 @@
-service: serverless-python-rest-api-with-dynamodb
+service: lambda-ci-test
 
 provider:
   name: aws
