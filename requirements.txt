@@ -1,0 +1,3 @@
+boto3==1.33.13
+aws-xray-sdk
+black
