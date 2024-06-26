@@ -66,11 +66,16 @@ jobs:
       - name: Install Node dependencies (specifically, serverless-python-requirements)
         run: npm install
 
+      - name: Install serverless 3.x
+        run: npm i -g serverless@3.x
+
       - name: Serverless deploy
-        uses: serverless/github-action@master
-        with:
-          args: -c "cd ./backend && serverless deploy --config serverless_dev.yml"
-          entrypoint: /bin/sh
+        run: |
+          cd ./backend
+          serverless deploy --config serverless_dev.yml
+        # with:
+        #   args: -c "cd ./backend && serverless deploy --config serverless_dev.yml"
+        #   entrypoint: /bin/sh
         env:
           LOG_LEVEL: debug
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

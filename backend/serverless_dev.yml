@@ -77,6 +77,7 @@ resources:
 
 plugins:
   - serverless-localstack
+  - serverless-python-requirements
 
 custom:
   localstack:
